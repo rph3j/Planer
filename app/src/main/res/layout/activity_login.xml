@@ -10,15 +10,21 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< 1029d29f552a1e4b1733a3f37f3e61582b9e9322
         android:layout_marginTop="4dp"
         android:text="Login Form"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
+=======
+        android:text="Login Form"
+        app:layout_constraintEnd_toEndOf="parent"
+>>>>>>> Piotr
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
+<<<<<<< 1029d29f552a1e4b1733a3f37f3e61582b9e9322
         android:layout_width="113dp"
         android:layout_height="48dp"
         android:text="Login"
@@ -26,6 +32,13 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="64dp" />
+=======
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="73dp" />
+>>>>>>> Piotr
 
     <TextView
         android:id="@+id/textView7"
