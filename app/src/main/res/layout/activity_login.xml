@@ -19,21 +19,26 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="113dp"
-        android:layout_height="48dp"
+        android:layout_width="75dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="84dp"
         android:text="Login"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="64dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="187dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="187dp"
         android:text="Hasło"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="222dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginEmail" />
 
     <EditText
         android:id="@+id/etLoginPassword"
@@ -71,7 +76,10 @@
         android:id="@+id/bntLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="366dp" />
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="78dp"
+        android:text="Zaloguj"
+        app:layout_constraintEnd_toStartOf="@+id/tvSwitchToRegister"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>
