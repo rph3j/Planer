@@ -21,9 +21,15 @@
         android:id="@+id/bntLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="260dp"
-        tools:layout_editor_absoluteY="92dp" />
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="208dp"
+        android:text="Wyloguj"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/tvEmail"
@@ -31,22 +37,43 @@
         android:layout_height="wrap_content"
 <<<<<<< HEAD
         tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="186dp" />
+        tools:layout_editor_absoluteY="186dp" /><![CDATA[
 =======
         android:text="TextView"
         tools:layout_editor_absoluteX="58dp"
         tools:layout_editor_absoluteY="379dp" />
 >>>>>>> 12303bd78397b5bf05e6eae98483620560d9b4a1
 
+    ]]>
+
     <TextView
         android:id="@+id/textView8"
         android:layout_width="238dp"
         android:layout_height="52dp"
         android:layout_marginStart="176dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="388dp"
         android:layout_marginEnd="115dp"
+        android:layout_marginBottom="35dp"
         android:text="Jesteś zalogowany"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/bntLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="244dp"
+        android:layout_height="178dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="75dp"
+        android:text="W budowie"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
