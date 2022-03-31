@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -25,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -41,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        TextView textViewSwitchToLogin = findViewById(R.id.tvSwitchToLogin);
+        FloatingActionButton textViewSwitchToLogin = findViewById(R.id.tvSwitchToLogin);
         textViewSwitchToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

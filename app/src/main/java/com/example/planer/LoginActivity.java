@@ -5,16 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.ActivityResultCallback;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.ActionCodeSettings;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser() != null) {
             finish();
@@ -32,20 +45,10 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         Button btnLogin = findViewById(R.id.bntLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                authenticateUser();
-            }
-        });
+        btnLogin.setOnClickListener(v -> authenticateUser());
 
-        TextView tvSwitchToRegister = findViewById(R.id.tvSwitchToRegister);
-        tvSwitchToRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switchToRegister();
-            }
-        });
+        Button tvSwitchToRegister = findViewById(R.id.tvSwitchToRegister);
+        tvSwitchToRegister.setOnClickListener(v -> switchToRegister());
     }
 
     private void authenticateUser() {
@@ -80,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
     private void  switchToRegister(){
-        Intent intent = new Intent(this, RegisterActivity.class);
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
         finish();
     }
