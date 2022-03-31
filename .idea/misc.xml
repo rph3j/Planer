@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Planer/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Planer/app/src/main/res/layout/activity_main.xml" value="0.29891304347826086" />
+        <entry key="..\:/Planer/app/src/main/res/layout/activity_register.xml" value="0.29891304347826086" />
         <entry key="..\:/Users/UL0258024/AndroidStudioProjects/Planer/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/UL0258024/AndroidStudioProjects/Planer/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/UL0258024/AndroidStudioProjects/Planer/app/src/main/res/layout/activity_register.xml" value="0.22826086956521738" />
