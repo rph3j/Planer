@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,14 +48,20 @@ public class LoginActivity extends AppCompatActivity {
 
         Button btnLogin = findViewById(R.id.bntLogin);
         btnLogin.setOnClickListener(v -> authenticateUser());
+        TextView btn=findViewById(R.id.textViewSignUp);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+            }
+        });
 
-        Button tvSwitchToRegister = findViewById(R.id.tvSwitchToRegister);
-        tvSwitchToRegister.setOnClickListener(v -> switchToRegister());
+
     }
 
     private void authenticateUser() {
-        EditText etLoginEmail = findViewById(R.id.etLoginEmail);
-        EditText etLoginPassword = findViewById(R.id.etLoginPassword);
+        EditText etLoginEmail = findViewById(R.id.inputEmail);
+        EditText etLoginPassword = findViewById(R.id.inputPassword);
 
         String email = etLoginEmail.getText().toString();
         String password = etLoginPassword.getText().toString();
@@ -82,11 +90,8 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    private void  switchToRegister(){
-        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
+
 
 
 }

@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvLogin, tvEmail;
+    TextView tvLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         tvLogin = findViewById(R.id.tvLogin);
-        tvEmail = findViewById(R.id.tvEmail);
 
         Button btnLogout = findViewById(R.id.bntLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -52,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
                 if(user != null) {
-                    tvEmail.setText("Email: " + user.email);
-                    tvLogin.setText("Login; " + user.login);
+                    tvLogin.setText("Witaj " + user.login);
                 }
             }
 
