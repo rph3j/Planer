@@ -65,6 +65,27 @@ public class RegisterActivity extends AppCompatActivity {
              Toast.makeText(this, "Wypelnij wszystkie pola", Toast.LENGTH_LONG).show();
              return;
          }
+         if(password.length() < 6)
+         {
+             Toast.makeText(this, "Za mała ilość znaków hasła", Toast.LENGTH_LONG).show();
+             return;
+         }
+         if(password.length() == confirm.length())
+         {
+             for(int i = 0; i < password.length(); ++i)
+             {
+                 if(password[i] != confirm[i])
+                 {
+                     Toast.makeText(this, "Błąd" , Toast.LENGTH_LONG).show();
+                     return;
+                 }
+             }
+         }
+         else
+         {
+             Toast.makeText(this, "Błąd" , Toast.LENGTH_LONG).show();
+             return;
+         }
 
          mAuth.createUserWithEmailAndPassword(email, password)
                  .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
