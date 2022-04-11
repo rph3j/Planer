@@ -90,8 +90,6 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     {
         calendarRecyclerView = findViewById(R.id.calendarRecycleView);
         monthYearText = findViewById(R.id.monthYearTV);
-        CalendarUtils.selectedDate = LocalDate.now();
-        setMonthView();
     }
 
     private void setMonthView()
