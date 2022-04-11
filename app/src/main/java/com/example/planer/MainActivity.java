@@ -60,6 +60,14 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 
         tvLogin = findViewById(R.id.bntLogin);
 
+        Button btnLogout = findViewById(R.id.bntLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logoutUser();
+            }
+        });
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference("users").child(currentUser.getUid());
         reference.addValueEventListener(new ValueEventListener() {
@@ -118,12 +126,12 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     }
 
     @Override
-    public void OnItemClick(int position, String dayText)
+    public void OnItemClick(int position, LocalDate date)
     {
-        if(dayText.equals(""))
+        if(date != null)
         {
-            String message = "Wybrana data" + dayText + " " + monthYearFromDate(CalendarUtils.selectedDate);
-            Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+            CalendarUtils.selectedDate = date;
+            setMonthView();
         }
     }
 

@@ -9,6 +9,18 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/bntLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="wyloguj"
+        android:textColor="@color/black"
+        android:background="@null"
+        android:textStyle="italic"
+        android:onClick="weeklyAction"
+        android:textSize="20sp"/>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
