@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".EventEditActivity">
+    tools:context=".EventEditActivity"
+    android:background="@drawable/bb">
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +18,7 @@
         android:textSize="20sp"
         android:textAlignment="center"
         android:textColor="@color/black"/>
-    
+
     <EditText
         android:id="@+id/eventNameET"
         android:layout_width="wrap_content"
@@ -50,16 +51,16 @@
         android:textColor="@color/black"/>
 
     <Button
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
-        android:text="Zapisz"
-        android:textColor="@color/blue"
-        android:background="@null"
-        android:textStyle="bold"
-        android:onClick="saveEventAction"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/arrow_button"
+        android:onClick="saveEventAction"
+        android:text="Zapisz"
+        android:textColor="@color/Yellow"
         android:textSize="20sp"
+        android:textStyle="bold"
         tools:ignore="OnClick" />
 
 
