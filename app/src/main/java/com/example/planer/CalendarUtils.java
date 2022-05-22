@@ -1,8 +1,5 @@
 package com.example.planer;
 
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -26,30 +23,50 @@ public class CalendarUtils
         return time.format(formatter);
     }
 
+    public static String formattedShortTime(LocalTime time)
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        return time.format(formatter);
+    }
+
     public static String monthYearFromDate(LocalDate date)
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
         return date.format(formatter);
     }
 
-    public static ArrayList<LocalDate> daysInMonthArray(LocalDate date)
+    public static String monthDayFromDate(LocalDate date)
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d");
+        return date.format(formatter);
+    }
+
+    public static ArrayList<LocalDate> daysInMonthArray()
     {
         ArrayList<LocalDate> daysInMonthArray = new ArrayList<>();
-        YearMonth yearMonth = YearMonth.from(date);
 
+        YearMonth yearMonth = YearMonth.from(selectedDate);
         int daysInMonth = yearMonth.lengthOfMonth();
-        LocalDate firstofMonth = CalendarUtils.selectedDate.withDayOfMonth(1);
-        int dayofWeek = firstofMonth.getDayOfWeek().getValue();
+
+        LocalDate prevMonth = selectedDate.minusMonths(1);
+        LocalDate nextMonth = selectedDate.plusMonths(1);
+
+        YearMonth prevYearMonth = YearMonth.from(prevMonth);
+        int prevDaysInMonth = prevYearMonth.lengthOfMonth();
+
+        LocalDate firstOfMonth = CalendarUtils.selectedDate.withDayOfMonth(1);
+        int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
 
         for(int i = 1; i <= 42; i++)
         {
-            if(i <= dayofWeek || i > daysInMonth + dayofWeek)
-                daysInMonthArray.add(null);
+            if(i <= dayOfWeek)
+                daysInMonthArray.add(LocalDate.of(prevMonth.getYear(),prevMonth.getMonth(),prevDaysInMonth + i - dayOfWeek));
+            else if(i > daysInMonth + dayOfWeek)
+                daysInMonthArray.add(LocalDate.of(nextMonth.getYear(),nextMonth.getMonth(),i - dayOfWeek - daysInMonth));
             else
-                daysInMonthArray.add(LocalDate.of(selectedDate.getYear(),selectedDate.getMonth(), i - dayofWeek));
+                daysInMonthArray.add(LocalDate.of(selectedDate.getYear(),selectedDate.getMonth(),i - dayOfWeek));
         }
-        return daysInMonthArray;
-
+        return  daysInMonthArray;
     }
 
     public static ArrayList<LocalDate> daysInWeekArray(LocalDate selectedDate)
@@ -58,7 +75,7 @@ public class CalendarUtils
         LocalDate current = sundayForDate(selectedDate);
         LocalDate endDate = current.plusWeeks(1);
 
-        while(current.isBefore(endDate))
+        while (current.isBefore(endDate))
         {
             days.add(current);
             current = current.plusDays(1);
@@ -70,15 +87,14 @@ public class CalendarUtils
     {
         LocalDate oneWeekAgo = current.minusWeeks(1);
 
-        while(current.isAfter(oneWeekAgo))
+        while (current.isAfter(oneWeekAgo))
         {
             if(current.getDayOfWeek() == DayOfWeek.SUNDAY)
-            {
                 return current;
-            }
 
             current = current.minusDays(1);
         }
+
         return null;
     }
 

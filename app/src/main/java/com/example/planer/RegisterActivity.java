@@ -61,9 +61,40 @@ public class RegisterActivity extends AppCompatActivity {
          String login = etLogin.getText().toString();
          String confirm = etConfirm.getText().toString();
 
-         if (email.isEmpty() || password.isEmpty() || login.isEmpty()) {
+         if (email.isEmpty() || password.isEmpty() || login.isEmpty() || confirm.isEmpty()) {
              Toast.makeText(this, "Wypelnij wszystkie pola", Toast.LENGTH_LONG).show();
              return;
+         }
+         if (password.length() < 8) {
+             Toast.makeText(this, "Hasło powinno mieć conajmniej 8 znaków", Toast.LENGTH_LONG).show();
+             return;
+         }
+         int czyWileka = 0;
+         int czyMała = 0;
+         int czyZankSpecjalny = 0;
+
+         for(int i = 0; i < password.length();i++)
+         {
+             int v = password.charAt(i);
+             if(v > 96 && v < 123)
+                 czyMała = 1;
+             else {
+                 if (v > 64 && v < 91)
+                     czyWileka = 1;
+                 else
+                     czyZankSpecjalny = 1;
+             }
+         }
+         if (czyMała != 1 || czyWileka != 1 || czyZankSpecjalny != 1) {
+             Toast.makeText(this, "Hasło powinno się składać z wilekich i małych liter oraz znaków specjalnych", Toast.LENGTH_LONG).show();
+             return;
+         }
+         for(int i = 0; i < password.length();i++)
+         {
+             if(password.charAt(i) != confirm.charAt(i)) {
+                 Toast.makeText(this, "Nie poprawne potwierdzenie hasła " + confirm + password, Toast.LENGTH_LONG).show();
+                 return;
+             }
          }
 
          mAuth.createUserWithEmailAndPassword(email, password)
