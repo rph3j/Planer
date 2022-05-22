@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
-
+    private boolean menuVisible = false;
 
     TextView tvLogin;
 
@@ -85,6 +88,13 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             }
         });
     }
+
+    //@Override
+   // public boolean onCreateOptionsMenu(Menu menu) {
+       //MenuInflater inflater = getMenuInflater();
+       // inflater.inflate(R.menu.hoem_menu, menu);
+       // return true;
+  //  }
 
     private void initWidgets()
     {
@@ -136,5 +146,17 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     public void weeklyAction(View view)
     {
         startActivity(new Intent(this, WeekViewActivity.class));
+    }
+
+    public void makeVisability(View view)
+    {
+        if(menuVisible) {
+            findViewById(R.id.menu).setVisibility(View.INVISIBLE);
+            menuVisible = false;
+        }
+        else {
+            findViewById(R.id.menu).setVisibility(View.VISIBLE);
+            menuVisible = true;
+        }
     }
 }
