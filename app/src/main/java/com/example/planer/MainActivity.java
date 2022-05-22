@@ -159,4 +159,16 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             menuVisible = true;
         }
     }
+
+    public void makeVisability(View view)
+    {
+        if(menuVisible) {
+            findViewById(R.id.menu).setVisibility(View.INVISIBLE);
+            menuVisible = false;
+        }
+        else {
+            findViewById(R.id.menu).setVisibility(View.VISIBLE);
+            menuVisible = true;
+        }
+    }
 }
