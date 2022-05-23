@@ -133,9 +133,20 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         setMonthView();
     }
 
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        finish();
+    }
+
     public void weeklyAction(View view)
     {
         startActivity(new Intent(this, WeekViewActivity.class));
+    }
+    public void dailyAction(View view)
+    {
+        startActivity(new Intent(this, DayCalender.class));
     }
 
     @Override
@@ -145,18 +156,6 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         {
             CalendarUtils.selectedDate = date;
             setMonthView();
-        }
-    }
-
-    public void makeVisability(View view)
-    {
-        if(menuVisible) {
-            findViewById(R.id.menu).setVisibility(View.INVISIBLE);
-            menuVisible = false;
-        }
-        else {
-            findViewById(R.id.menu).setVisibility(View.VISIBLE);
-            menuVisible = true;
         }
     }
 

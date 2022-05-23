@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private ListView eventListView;
+    private boolean menuVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,6 +34,21 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         setContentView(R.layout.activity_week_view);
         initWidgets();
         setWeekView();
+
+        ImageButton NW = findViewById(R.id.nextWeek);
+        NW.setOnClickListener(view -> nextWeekAction());
+
+        ImageButton PW = findViewById(R.id.previousWeek);
+        PW.setOnClickListener(view -> previousWeekAction());
+
+        Button ADD = findViewById(R.id.addEvent);
+        ADD.setOnClickListener(view -> newEventAction());
+
+        Button D = findViewById(R.id.day);
+        D.setOnClickListener(view -> dailyAction());
+
+        Button M = findViewById(R.id.month);
+        M.setOnClickListener(view -> monthAction());
     }
 
     private void initWidgets()
@@ -53,13 +71,13 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     }
 
 
-    public void previousWeekAction(View view)
+    public void previousWeekAction()
     {
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusWeeks(1);
         setWeekView();
     }
 
-    public void nextWeekAction(View view)
+    public void nextWeekAction()
     {
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusWeeks(1);
         setWeekView();
@@ -86,13 +104,35 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         eventListView.setAdapter(eventAdapter);
     }
 
-    public void newEventAction(View view)
+    public void newEventAction()
     {
         startActivity(new Intent(this, EventEditActivity.class));
     }
 
-    public void dailyAction(View view)
+    @Override
+    public void onPause()
     {
-        startActivity(new Intent(this, DailyCalendarActivity.class));
+        super.onPause();
+        finish();
+    }
+
+    public void dailyAction()
+    {
+        startActivity(new Intent(this, DayCalender.class));
+    }
+    public void monthAction()
+    {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+    public void makeVisability(View view)
+    {
+        if(menuVisible) {
+            findViewById(R.id.menu).setVisibility(View.INVISIBLE);
+            menuVisible = false;
+        }
+        else {
+            findViewById(R.id.menu).setVisibility(View.VISIBLE);
+            menuVisible = true;
+        }
     }
 }

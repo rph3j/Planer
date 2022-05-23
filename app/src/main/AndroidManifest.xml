@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".DayCalender"
+            android:exported="false" />
+        <activity
             android:name=".EventEditActivity"
             android:exported="false" />
         <activity
@@ -31,4 +34,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
