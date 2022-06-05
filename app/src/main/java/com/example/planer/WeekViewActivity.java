@@ -41,9 +41,6 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         ImageButton PW = findViewById(R.id.previousWeek);
         PW.setOnClickListener(view -> previousWeekAction());
 
-        Button ADD = findViewById(R.id.addEvent);
-        ADD.setOnClickListener(view -> newEventAction());
-
         Button D = findViewById(R.id.day);
         D.setOnClickListener(view -> dailyAction());
 
@@ -104,16 +101,9 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         eventListView.setAdapter(eventAdapter);
     }
 
-    public void newEventAction()
+    public void newEventAction(View View)
     {
         startActivity(new Intent(this, EventEditActivity.class));
-    }
-
-    @Override
-    public void onPause()
-    {
-        super.onPause();
-        finish();
     }
 
     public void dailyAction()
@@ -135,4 +125,5 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
             menuVisible = true;
         }
     }
+
 }

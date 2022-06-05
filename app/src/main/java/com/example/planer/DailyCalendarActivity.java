@@ -72,6 +72,7 @@ public class DailyCalendarActivity extends AppCompatActivity
             list.add(hourEvent);
         }
 
+
         return list;
     }
 
@@ -91,4 +92,5 @@ public class DailyCalendarActivity extends AppCompatActivity
     {
         startActivity(new Intent(this, EventEditActivity.class));
     }
+
 }

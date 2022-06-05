@@ -38,9 +38,6 @@ public class DayCalender extends AppCompatActivity {
         ImageButton PD = findViewById(R.id.previousDay);
         PD.setOnClickListener(view -> previousDayAction());
 
-        Button ADD = findViewById(R.id.addEvent);
-        ADD.setOnClickListener(view -> newEventAction());
-
         Button W = findViewById(R.id.weekly);
         W.setOnClickListener(view -> weeklyAction());
 
@@ -130,5 +127,9 @@ public class DayCalender extends AppCompatActivity {
             findViewById(R.id.menu).setVisibility(View.VISIBLE);
             menuVisible = true;
         }
+    }
+    public void newEventAction(View view)
+    {
+        startActivity(new Intent(this, EventEditActivity.class));
     }
 }

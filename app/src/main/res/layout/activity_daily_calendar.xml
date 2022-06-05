@@ -57,15 +57,16 @@
         android:textSize="18sp"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nowa aktywnosc"
-        android:textColor="@color/blue"
-        android:background="@null"
-        android:textStyle="bold"
-        android:onClick="newEventAction"
+        android:layout_width="235dp"
+        android:layout_height="63dp"
         android:layout_gravity="center"
-        android:textSize="20sp"/>
+        android:background="@null"
+        android:onClick="newEventAction"
+        android:text="New Event"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
 
     <ListView
         android:id="@+id/hourListView"

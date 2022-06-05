@@ -27,9 +27,15 @@
         <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/drawable/ic_facebook.xml" value="0.2265" />
         <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/drawable/ic_google.xml" value="0.2265" />
         <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/drawable/input_bg.xml" value="0.2265" />
+        <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/activity_daily_calendar.xml" value="0.264" />
+        <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/activity_day_calender.xml" value="0.2" />
         <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/activity_week_view.xml" value="0.19655797101449277" />
+        <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/calendar_cell.xml" value="0.1890625" />
+        <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/event_cell.xml" value="0.1890625" />
+        <entry key="..\:/Users/UL0258024/Documents/GitHub/Planer/app/src/main/res/layout/hour_cell.xml" value="0.1890625" />
         <entry key="..\:/Users/nn/Documents/GitHub/Planer/app/src/main/res/layout/activity_event_edit.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/nn/Documents/GitHub/Planer/app/src/main/res/layout/activity_login.xml" value="0.2786458333333333" />
         <entry key="..\:/Users/nn/Documents/GitHub/Planer/app/src/main/res/layout/activity_main.xml" value="0.25" />

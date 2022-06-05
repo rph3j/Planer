@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@drawable/bb">
+    tools:context=".WeekViewActivity"
+    android:background="@drawable/bb2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -132,11 +132,22 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bnt_bg"
+            android:onClick="newEventAction"
+            android:text="New Event"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
         <ListView
             android:id="@+id/eventListView"
             android:layout_width="match_parent"
             android:layout_height="326dp"
             android:layout_weight="5" />
+
 
     </LinearLayout>
 
@@ -157,24 +168,16 @@
 
     <LinearLayout
         android:id="@+id/menu"
-        android:layout_width="121dp"
-        android:layout_height="157dp"
+        android:layout_width="116dp"
+        android:layout_height="97dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="12dp"
+        android:background="@drawable/arrow_button"
         android:orientation="vertical"
         android:visibility="invisible"
-        android:background="@drawable/arrow_button"
         app:layout_constraintBottom_toTopOf="@+id/home"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/addEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:text="dodaj"
-            android:textColor="@color/Yellow"
-            android:textStyle="italic" />
 
         <Button
             android:id="@+id/month"

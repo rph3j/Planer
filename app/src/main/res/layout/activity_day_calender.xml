@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bb"
+    android:background="@drawable/bb2"
     tools:context=".DayCalender">
 
 
@@ -55,28 +55,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/next" />
 
+
     <TextView
         android:id="@+id/dayOfWeekTV"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:text="Monday"
         android:textAlignment="center"
         android:textColor="@color/gray"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/monthDayText" />
 
     <ListView
+
         android:id="@+id/hourListView"
         android:layout_width="359dp"
         android:layout_height="502dp"
+        android:layout_marginTop="44dp"
         android:layout_weight="5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dayOfWeekTV" />
+        app:layout_constraintTop_toBottomOf="@+id/dayOfWeekTV">
+
+
+    </ListView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home"
@@ -93,25 +98,18 @@
         app:srcCompat="@drawable/home_yellow" />
 
     <LinearLayout
+
         android:id="@+id/menu"
-        android:layout_width="121dp"
-        android:layout_height="157dp"
+        android:layout_width="115dp"
+        android:layout_height="77dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="12dp"
+        android:background="@drawable/arrow_button"
         android:orientation="vertical"
         android:visibility="invisible"
-        android:background="@drawable/arrow_button"
         app:layout_constraintBottom_toTopOf="@+id/home"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/addEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:text="dodaj"
-            android:textColor="@color/Yellow"
-            android:textStyle="italic" />
 
         <Button
             android:id="@+id/weekly"
@@ -131,4 +129,21 @@
             android:textColor="@color/Yellow"
             android:textStyle="italic" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="71dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/bnt_bg"
+        android:elegantTextHeight="false"
+        android:onClick="newEventAction"
+        android:text="+"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textDirection="locale"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextDay" />
 </androidx.constraintlayout.widget.ConstraintLayout>
